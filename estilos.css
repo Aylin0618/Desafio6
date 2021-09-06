@@ -1,0 +1,92 @@
+body {
+	background-color:#fff2f4;
+}
+.titulos {
+	color:#a86363;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+#subtitulo {
+	text-align: center;
+	color: #ff2462;
+	font-family: 'Sansita Swashed', cursive;
+}
+.calculos {
+	background: #1b1545;
+	color: #d991ff;
+	margin: 20px;
+	padding: 15px;
+	text-align: center;
+}
+input[type=number] {
+	text-align: center;
+	width: 10%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: none;
+	background-color: #d7cedb;
+	color: #100630;
+	font-size: 17px;
+	border-radius: 4px;
+	margin-right: 7px;
+	justify-content: center;
+  	align-items: center;
+}
+button {
+  background-color: #1cc965;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 21px;
+  cursor: pointer;
+  font-family: 'Sansita Swashed', cursive;
+  margin-right: 7px;
+}
+input[type=reset] {
+   background-color: #ffd000;
+   border: none;
+   text-decoration: none;
+   color: white;
+	padding: 15px 32px;
+   cursor: pointer;
+   font-family: 'Sansita Swashed', cursive;
+   font-size: 21px;
+}
+#k {
+	font-family: 'Abel', sans-serif;
+	text-align: left;
+	font-size: 18px;
+	padding-left: 70px;
+	padding-right: 70px;
+}
+#teoria2{
+	padding-left: 350px;
+	font-family: 'Abel', sans-serif;
+	text-align: left;
+	font-size: 18px;
+	padding-right: 70px;
+}
+p{
+	font-family: 'Abel', sans-serif;
+	font-size: 20px;
+}
+#imag{
+	padding-left: 70px;
+}
+#num,#numb {
+	width: 15%;
+}
+#botoncito {
+	text-align: center;
+}
+#postulados{
+	font-family: 'Abel', sans-serif;
+	text-align: left;
+	font-size: 18px;
+	padding-left: 70px;
+	color:#ffe0fd;
+}

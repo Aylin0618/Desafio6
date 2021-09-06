@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desafio</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+	<h1 class="titulos">DESAFIO 5</h1>
+<section class="calculos">
+	<form>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Abel&family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+		<h2 id="subtitulo">Relatividad especial</h2>
+		<h3 id="teoria">
+			<p id="k">
+				La teoría de la relatividad especial, formulada por Albert Einstein en 1905.<br>
+				Con la teoría de la relatividad especial, la humanidad entendió que lo que hasta ahora había dado por sentado que era una constante, el tiempo, era en realidad una variable. No sólo eso, sino que el espacio también lo era y que ambos dependían, en una nueva conjunción espacio-tiempo, de la velocidad.<br>
+			
+				Toda la Teoria de la Relatividad Especial esta basada en dos postulados:<br>
+			</p>
+				<p id="postulados">
+				1. Todas las leyes de la fisica son validas para todos los sistemas inerciales.<br>
+				2. La velocidad de la luz en el vacio es igual para todos los observadores y tiene el valor de 299.792,458 km/s o 300*10^6 m/s, <br>independientemente del estado de movimiento de la fuente.<br>
+				</p>
+				<img src="cono2.png" align="left" id="imag">
+			<p id="teoria2">
+				El primer postulado es el Principio de la Relatividad y fue formulado ya por Galilei para la
+				mecanica alrededor de 1600. Einstein lo amplió para todas las leyes físicas, especialmente para
+				el electromagnetismo, ya que la teoría de Maxwell parecía comportarse de manera diferente a la
+				Mecánica Newtoniana. El Principio de la Relatividad afirma que no existe ningun experimento
+				físico que sea capaz de distinguir si un observador está en reposo o en movimiento uniforme
+				rectilíneo. Dos observadores que se mueven uno con respecto al otro ven la misma física y, por lo
+				tanto, las leyes de la física deben escribirse de modo que no cambien al pasar de un sistema de
+				referencia a otro.<br>
+				El segundo postulado es más sorprendente, pero hay motivos teóricos y experimentales para
+				creerlo. Los motivos experimentales son los experimentos de Michelson y Morley, que querían
+				medir la velocidad de la Tierra con respecto al éter. El motivo teórico es la teoría de Maxwell que
+				afirma la existencia de ondas electromagnéticas (luz), cuya velocidad c es una constante predicha
+				por la teoría. Si se asume que todas las leyes de la física son válidas para todos los observadores,
+				hay que aceptar que c es una constante universal.<br>
+				Llevar estos dos postulados hasta sus últimas consecuencias implica abandonar las ideas intuitivas del espacio y el tiempo. 
+				<br>
+			<p id="k">
+				A continuacion veremos un programa que resuelve el siguiente ejercicio:
+			</p>
+		
+			<img src="ejercicio.png" align="center">
+			<p id="k">
+				Es recomendable usar el valor de c = 300*10^6 sin embargo puede ingresar cualquier valor y su respectivo error.
+			</p>
+		</h3>
+		<input type="number" id="L" placeholder="L">
+		<input type="number" id="v" placeholder="v">
+	    <input type="number" id="c" placeholder="c"><br>
+	    <input type="number" id="DL" placeholder="Delta L">
+	    <input type="number" id="Dv" placeholder="Delta v">
+	    <input type="number" id="Dc" placeholder="Delta c"><br>
+	    <button type="button" id="btn">Calcular</button>
+	    <input type="reset" value="Limpiar" >
+		<p id="resultado"></p>
+		<p id="resultado1"></p>
+		<p id="resultado2"></p>
+		<p id="resultado3"></p>
+		<p id="resultado4"></p>
+		<p id="resultado5"></p>
+		<p id="resultado6"></p>
+		<p id="resultado7"></p>
+		<p id="resultado8"></p>
+
+			<script type="text/javascript">
+			function op ()
+			{
+				var L = parseFloat(document.getElementById('L').value);
+				var v = parseFloat(document.getElementById('v').value);
+				var c = parseFloat(document.getElementById('c').value);
+				var DL = parseFloat(document.getElementById('DL').value);
+				var Dv = parseFloat(document.getElementById('Dv').value);
+				var Dc = parseFloat(document.getElementById('Dc').value);
+				//var c1=Math.pow(10,6);
+				//var c=300*c1;
+				p1=Math.pow(v,2)/Math.pow(c,2);
+				p2=Math.sqrt(1-p1);
+				p3=1-p2;
+				p4=L*p3;
+				d1=1-((Math.sqrt(Math.pow(c,2)-Math.pow(v,2)))/c);
+				d2=(L*v)/(c*Math.sqrt(Math.pow(-v,2)+Math.pow(c,2)));
+				g1=L*Math.pow(v,2);
+				g2=Math.pow(c,2)*Math.sqrt(Math.pow(-v,2)+Math.pow(c,2));
+				d3=-g1/g2;
+				Df=Math.abs(d1)*DL+Math.abs(d2)*Dv+Math.abs(d3)*Dc;
+				Er=Df/Math.abs(p4)*100;
+				i1=p4-Df;
+				i2=p4+Df;
+				
+				document.getElementById("resultado").innerHTML = "c: " +c+"<br>" 
+				
+				document.getElementById("resultado1").innerHTML = "Reemplazando valores en la formula: " +p4+"<br>" 
+				
+				document.getElementById("resultado2").innerHTML = "Resultado df/dL: " +d1+"<br>"
+				
+				document.getElementById("resultado3").innerHTML = "Resultado df/dv: " +d2+"<br>"
+				document.getElementById("resultado4").innerHTML = "Resultado df/dc: " +d3+"<br>"
+				document.getElementById("resultado5").innerHTML = "Delta f: " +Df+"<br>"
+				document.getElementById("resultado6").innerHTML = "Er%: " +Er+"<br>"
+				document.getElementById("resultado7").innerHTML = "Rango del valor exacto: "+p4+"+-"+Df+"<br>"
+				document.getElementById("resultado8").innerHTML = "Intervalo para el valor verdadero: " +i1+" < f < "+i2+"<br>"
+			}
+			var b=document.getElementById('btn');
+			b.addEventListener('click',op);
+			</script>
+	</form>
+</section>
+
+</body>
+</html>
